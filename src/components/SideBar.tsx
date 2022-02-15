@@ -1,6 +1,7 @@
 import { Button } from './Button'
 
 import '../styles/sidebar.scss';
+import { memo } from 'react';
 
 interface SideBarProps {
   genres: Array<{
@@ -12,7 +13,7 @@ interface SideBarProps {
   handleClickButton: (id: number) => void
 }
 
-export function SideBar (props: SideBarProps) {
+function SideBarComponent (props: SideBarProps) {
   return (
     <nav className='sidebar'>
       <span>
@@ -33,3 +34,5 @@ export function SideBar (props: SideBarProps) {
     </nav>
   )
 }
+
+export const SideBar = memo(SideBarComponent)

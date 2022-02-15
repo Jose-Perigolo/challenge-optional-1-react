@@ -7,13 +7,10 @@ interface ContentProps {
     imdbID: string
     Title: string
     Poster: string
-    Ratings: Array<{
-      Source: string
-      Value: string
-    }>
+    imdbRating: string
     Runtime: string
   }>
-  selectedGenre : {
+  selectedGenre: {
     title: string
   }
 }
@@ -35,7 +32,7 @@ export function Content (props: ContentProps) {
               title={movie.Title}
               poster={movie.Poster}
               runtime={movie.Runtime}
-              rating={movie.Ratings[0].Value}
+              rating={movie.imdbRating + '/10'}
             />
           ))}
         </div>
